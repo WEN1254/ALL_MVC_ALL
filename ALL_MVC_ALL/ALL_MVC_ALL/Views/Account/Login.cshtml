@@ -61,7 +61,7 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <style>
-        .title, #loginForm,.socialLoginForm {
+        .title, #loginForm, .socialLoginForm {
             width: 100%;
             text-align: center;
         }
@@ -69,8 +69,36 @@
         .form-control {
             display: flex;
             margin: auto;
-            width:30%;
+            width: 30%;
+        }
+
+        .fa-google-plus {
+            color: red;
+        }
+
+        .fa-facebook {
+            color: rgb(15, 45, 145);
         }
     </style>
 }
+
+
+@section endJS {
+    <script>
+        var google = document.getElementById('Google');
+        google.innerHTML = "";
+        var facebook = document.getElementById('Facebook');
+         facebook.innerHTML= "";
+        var i_g = document.createElement("i");
+        var i_f = document.createElement("i");
+        i_g.setAttribute("class", "fab fa-google-plus");
+        google.appendChild(i_g);
+        i_f.setAttribute("class", "fab fa-facebook");
+        facebook.appendChild(i_f);
+    </script>
+}
+
+
+
+
 
