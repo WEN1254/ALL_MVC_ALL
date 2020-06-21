@@ -1,0 +1,127 @@
+.top-column {
+    display: flex;
+    padding: 50px;
+}
+
+.column-content {
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+}
+
+i {
+    color: #bbb;
+    font-size: 25px;
+    transition: .3s;
+}
+
+    i:hover {
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+.col-3 {
+    text-align: center;
+}
+
+.Social {
+    background: #222;
+}
+
+.icon-list {
+    padding: 50px;
+}
+
+    .icon-list p {
+        font-size: 18px;
+    }
+
+.column-content .title {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+    .column-content .title h3 {
+        color: #fff;
+        font-size: 24px;
+        text-align: left;
+    }
+
+.column-content .menu {
+    text-align-last: left;
+    display: flex;
+    flex-direction: column;
+}
+
+    .column-content .menu li {
+        list-style: none;
+    }
+
+    .column-content .menu a {
+        text-decoration: none;
+        color: #777;
+        transition: .2s;
+        width: auto;
+    }
+
+        .column-content .menu a:hover {
+            color: #fff;
+        }
+
+@media screen and (max-width: 768px) {
+    .icon-list i p {
+        display: none;
+    }
+}
+
+.LineBot {
+    position: fixed;
+    bottom: 50px;
+    right: 58px;
+    width: 3.5%;
+    border-radius: 50px;
+}
+
+#LineQr {
+    width: 160px;
+    position: fixed;
+    bottom: 90px;
+    right: 10px;
+    display: none;
+    border: 2px;
+}
+
+.LineQr_modal-header {
+    background-color: rgb(37, 182, 18);
+    color: white;
+}
+
+    .LineQr_modal-header img {
+        width: 20%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .LineQr_modal-header span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+
+.LineQr_modal-title {
+    height: 1px;
+}
+
+.LineQr_modal-body {
+    width: 100%;
+    text-align: center;
+}
+
+    .LineQr_modal-body img {
+        margin-top: 10px;
+        width: 50%;
+    }

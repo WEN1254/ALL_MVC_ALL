@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Accessories";
+}
+
+<div class="content">
+    <div class="category_image ">
+        <div class="category_img w-100">
+            <img src="https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/catalog/tmp/category/WebM2_CategoryLandingPages_Marquees_AccessoriesNov18.jpg"
+                 alt="" class="image w-100 ">
+        </div>
+        <div class="category_content">
+            <h4 class="text-center">New Accessories Designs</h4>
+            <a href="~/CreatProductList/Category?type=14">
+                <img src="~/Assest/img/InformationImg/Collet Rug-頁面大圖.jpg"
+                     alt="Rugs" class="image w-100">
+                <h6>Rugs</h6>
+            </a>
+            <a href="~/CreatProductList/Category?type=15">
+                <img src="~/Assest/img/InformationImg/Duck Duck 20 Square Pillow-頁面大圖.jpg"
+                     alt="Pillows And Cushionss" class="image w-100">
+                <h6>Pillows And Cushionss</h6>
+            </a>
+            <a href="~/CreatProductList/Category?type=16">
+                <img src="~/Assest/img/InformationImg/Last Chance Mirror-頁面大圖.jpg"
+                     alt="Mirrors" class="image w-100">
+                <h6>Mirrors</h6>
+                <p>5 SHAPES, 3 COLORS</p>
+            </a>
+            <a href="~/CreatProductList/Category?type=17">
+                <img src="~/Assest/img/InformationImg/Chaperone Wool Throw-頁面大圖.jpg"
+                     alt="Bedding" class="image w-100">
+                <h6>Bedding</h6>
+            </a>
+        </div>
+
+    </div>
+    <div class="category_menu ">
+        <div class="category_menu_content">
+            <div class="home_link">
+                <a href="#">Home</a>
+                <span>| Modern Accessories</span>
+            </div>
+            <h1>Accessories</h1>
+            <ul>
+                <li>
+                    @Html.ActionLink("Rugs", "Category", "CreatProductList", new { type = 14 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Pillows And Cushionss", "Category", "CreatProductList", new { type = 15 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Mirrors", "Category", "CreatProductList", new { type = 16 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Bedding", "Category", "CreatProductList", new { type = 17 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+@section topCSS{
+    <link href="~/Assest/css/Introduction.css" rel="stylesheet" />
+    <style>
+    </style>
+}
+

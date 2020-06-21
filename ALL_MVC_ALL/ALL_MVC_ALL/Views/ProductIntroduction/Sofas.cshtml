@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Sofas";
+}
+
+<div class="content">
+    <div class="category_image ">
+        <div class="category_img w-100">
+            <img src="https://res-2.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,q_auto/v1/media/catalog/tmp/category/WebM2_CategoryLandingPages_Marquees_Living_Nov18.jpg"
+                 alt="" class="image w-100 ">
+        </div>
+        <div class="category_content">
+            <h4 class="text-center">New Sofa Designs</h4>
+            <a href="~/CreatProductList/Category?type=1">
+                <img src="~/Assest/img/InformationImg/Bobber Floor Lamp-頁面大圖.jpg"
+                     alt="Sofas And Sleeper" class="image w-100">
+                <h6>Sofas And Sleeper</h6>
+            </a>
+            <a href="~/CreatProductList/Category?type=2">
+                <img src="~/Assest/img/InformationImg/Bloke Armless Velvet Sofa with Chaise-頁面大圖.jpg"
+                     alt="Sectional Sofas" class="image w-100">
+                <h6>Sectional Sofas</h6>
+                <p>NEW DESIGN</p>
+            </a>
+        </div>
+
+    </div>
+    <div class="category_menu ">
+        <div class="category_menu_content">
+            <div class="home_link">
+                <a href="#">Home</a>
+                <span>| Modern Living Room Furniture</span>
+            </div>
+            <h1>Sofas</h1>
+            <ul>
+                <li>
+                    @Html.ActionLink("Sofas And Sleeper", "Category", "CreatProductList", new { type = 1 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Sectional Sofas", "Category", "CreatProductList", new { type = 2 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+@section topCSS{
+    <link href="~/Assest/css/Introduction.css" rel="stylesheet" />
+    <style>
+    </style>
+}
+
+
+

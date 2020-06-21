@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Chairs";
+}
+
+<div class="content">
+    <div class="category_image ">
+
+        <div class="category_img w-100">
+            <img src="~/Assest/img/InformationImg/Deep Thoughts Leather Chaise-頁面大圖.jpg"
+                 alt="" class="image w-100 ">
+        </div>
+        <div class="category_content">
+            <h4 class="text-center">New Chairs Designs</h4>
+            <a href="~/CreatProductList/Category?type=3">
+                <img src="~/Assest/img/InformationImg/Nonesuch Swivel Leather Lounge Chair-頁面大圖.jpg"
+                     alt="Lounge Chairs" class="image w-100">
+                <h6>Lounge Chairs</h6>
+            </a>
+            <a href="~/CreatProductList/Category?type=4">
+                <img src="~/Assest/img/InformationImg/Bumper Large Ottoman-頁面大圖.jpg"
+                     alt="Ottomans And Stools" class="image w-100">
+                <h6>Ottomans And Stools</h6>
+            </a>
+            <a href="~/CreatProductList/Category?type=5">
+                <img src="~/Assest/img/InformationImg/Daybench-頁面大圖.jpg"
+                     alt="Benches" class="image w-100">
+                <h6>Benches</h6>
+                <p>AVAILABLE IN KING AND QUEEN</p>
+            </a>
+            <a href="~/CreatProductList/Category?type=6">
+                <img src="~/Assest/img/InformationImg/Daily Task Chair-頁面大圖.jpg"
+                     alt="Kids-Chairs" class="image w-100">
+                <h6>Kids-Chairs</h6>
+                <p>AVAILABLE IN KING AND QUEEN</p>
+            </a>
+        </div>
+
+    </div>
+    <div class="category_menu ">
+        <div class="category_menu_content">
+            <div class="home_link">
+                <a href="#">Home</a>
+                <span>| Modern Bedroom Furniture</span>
+            </div>
+            <h1>Chairs</h1>
+            <ul>
+                <li>
+                    @Html.ActionLink("Lounge Chairs", "Category", "CreatProductList", new { type = 3 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Ottomans And Stools", "Category", "CreatProductList", new { type = 4 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Benches", "Category", "CreatProductList", new { type = 5 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+                <li>
+                    @Html.ActionLink("Kids-Chairs", "Category", "CreatProductList", new { type = 6 }, new { sortOrder = ViewBag.ResetParm })
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section topCSS{
+    <link href="~/Assest/css/Introduction.css" rel="stylesheet" />
+    <style>
+    </style>
+}
+

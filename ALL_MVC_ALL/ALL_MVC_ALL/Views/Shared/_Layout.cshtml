@@ -1,45 +1,125 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title DLUDOT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="~/Assest/js/_NavbarPartial.js"></script>
+    <link href="~/Assest/css/_NavbarPartial .css" rel="stylesheet" />
+    <link href="~/Assest/css/Footer.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @RenderSection("topCSS", required: false)
 
+    <script type="text/javascript">
+        //網頁載入完成時執行之function
+        //加入編號為productId的商品進購物車
+        function AddToCart(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddToCart", "Cart")',
+                data: { id: productId }
+            })
+            .done(function (msg) {
+
+                $('div#Cart').html(msg);
+            });
+        }
+         //移除購物車內商品
+        function RemoveFromCart(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RemoveFromCart", "Cart")',
+                data: { id: productId }
+            })
+                .done(function (msg) {
+
+                    $('div#Cart').html(msg);
+                });
+        }
+        //清空購物車內所有商品
+        function ClearCart() {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("ClearCart", "Cart")',
+                data: {}
+            })
+            .done(function (msg) {
+
+                $('div#Cart').html(msg);
+            });
+        }
+        function SubQty(productId) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("SubQty", "Cart")',
+                data: { id: productId }
+            })
+            .done(function (msg) {
+
+                $('div#Cart').html(msg);
+            });
+        }
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("關於", "About", "Home")</li>
-                    <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    @Html.Partial("_NavbarPartial")
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("首頁", "Index", "Home")</li>
+                        <li>@Html.ActionLink("關於", "About", "Home")</li>
+                        <li>@Html.ActionLink("連絡人", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
+        <div class="container body-content">*@
+    @RenderBody()
+    @Html.Partial("_FooterPartial")
+
+    @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+            </footer>
+        </div>*@
+    <script>
+
+        var LineBotcount = 0;
+        function LineBot() {
+            if (LineBotcount % 2 == 0) {
+                var LineQr = document.getElementById("LineQr");
+                LineQr.style.display = "block";
+                LineBotcount++;
+            }
+            else {
+                var LineQr = document.getElementById("LineQr");
+                LineQr.style.display = "none";
+                LineBotcount++;
+            }
+        }
+
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @RenderSection("endJS", required: false)
 </body>
 </html>
