@@ -167,6 +167,7 @@ input:checked ~ .shop {
         }
 
 .nav_icon {
+    display:flex;
     font-size: 18px;
 }
 
@@ -380,4 +381,7 @@ ul.drop-down-menu li {
 .row .item_txt .plus, .row .item_txt .less {
     font-size: 12px;
     margin: 0;
+}
+.accountnav{
+    margin:auto;
 }
