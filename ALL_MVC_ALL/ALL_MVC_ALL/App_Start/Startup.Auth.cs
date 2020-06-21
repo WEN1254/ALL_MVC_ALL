@@ -53,16 +53,15 @@ namespace ALL_MVC_ALL
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
+            app.UseFacebookAuthentication(
+                           appId: "604331927149906",
+                           appSecret: "b8263ca5e375831af361bc09d9c38b5b");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
-
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "977134379098-14b98d76se9kflelpajl3fmjo5gs9i6c.apps.googleusercontent.com",
+                ClientSecret = "UTE3mMfVBfmiddhteVAI569_"
+            });
         }
     }
 }
